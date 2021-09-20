@@ -1,0 +1,16 @@
+use 1812816_Database_lab03;
+select * from customers where city='Nantes';
+select * from offices where country !='USA' and country != 'France';
+select * from products where buyPrice >=70 and buyPrice <=200; 
+select * from products where buyPrice <50 or buyPrice >150; 
+select * from orders where shippedDate >= date('2003-1-15') and shippedDate <= date('2003-5-10');
+select * from orders where shippedDate <= subdate('2003-1-10',31);
+select * from orders where shippedDate >= adddate('2003-3-10',15);
+select * from employees where firstName not like 'c%';
+select * from customers where contactLastName  like '%er%';
+select * from products where productLine like '%CAR%';
+select * from products where productCode like '%\_10%';
+select * from products order by quantityInStock desc limit 5;
+select *, (quantityInStock * buyPrice) as Money from products;
+select productName from products order by quantityInStock desc, buyPrice asc;
+select * from products a, productlines b where a.productLine=b.productLine;
