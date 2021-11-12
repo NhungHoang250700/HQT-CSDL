@@ -38,5 +38,5 @@ select * from employees where match(firstName,jobTitle) against('+Bow Sale'with 
 /*j. Tìm các sản phẩm có ít nhất hai từ “1969” hoặc “Dodge”, nhưng không có từ “Chevrolet”*/
 select * from products where match(productName) against('+(+1969 0Dodge) -Chevrolet' in boolean mode);
 
-/*k. Tìm các khách hàng có chứ từ “Mini” và đặt thứ hạng thấp hơn cho các hàng có từ “Marseille” hay từ “Caravy”*/
+/*k. Tìm các khách hàng có chứ từ “Mini” và đặt thứ hạng thấp hơn cho các hàng có từ “Marseille” hay từ “Caravy”*/
 select * from customers where match(customerName) against('+Mini 0(~Marseille ~Caravy)'in boolean mode);
